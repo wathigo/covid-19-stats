@@ -3,19 +3,20 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as ActionCreators from '../actions';
 import Global from './Global';
+import Country from './Country';
 
 
-function BookList(props) {
-    useEffect(() => { 
-        props.fetchData();
-        console.log(props)
-      });
+function Home(props) {
    
-    return (
-        <div>
-            <Global/>
-        </div>
-    )
+    if (props.isLoading) {
+        return (<div>Loading...</div>)
+    } else {
+        return (
+            <div>
+                <Global globalData={props.dataSummary.Global}/>
+            </div>
+        )
+    }
          
 }
 
@@ -23,4 +24,4 @@ const mapStateToProps = (state => {
     return state;
 });
 
-export default connect(mapStateToProps, ActionCreators)(BookList);
+export default connect(mapStateToProps, ActionCreators)(Home);

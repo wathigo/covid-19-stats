@@ -7,7 +7,9 @@
         .then((response) => response.json())
         .then((data) => { 
             console.log('fetched!!!')
-            dispatch(updateData(data)); })
+            dispatch(updateData(data)); 
+            dispatch(loading())
+        })
         .catch((err) => console.log(err));
     }
 });
@@ -15,6 +17,12 @@
  export const updateData = (data) => ({
     type: GET_ALL_DATA,
     state: data,
+    isLoading: false
+});
+
+export const loading = () => ({
+    type: 'LOADING',
+    isLoading: false,
 });
 
 export const changeFilter = filter => ({
