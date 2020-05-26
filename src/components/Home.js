@@ -1,20 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as ActionCreators from '../actions';
 
 
-class BookList extends React.Component {
-    handleLoading(e) {
-        e.preventDefault();
-        console.log(this.props)
-        this.props.fetchData();
-    }
-    render() {
-        return (
-            <div onClick={this.handleLoading.bind(this)}>Click me</div>
-        )
-    }
+function BookList(props) {
+    useEffect(() => { 
+        props.fetchData();
+      });
+   
+    return (
+        <div>Click me</div>
+    )
+         
 }
 
 const mapStateToProps = (state => {
