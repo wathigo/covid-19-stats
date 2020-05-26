@@ -29,3 +29,38 @@
       font-size: 1.5em;
       bottom: 0.5em;
   }
+
+  /* Country styles */
+
+  .countries {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .countries .country {
+    flex: 1 0 46%;
+    width: 50%;
+    text-align: left;
+    padding: 0.7em;
+    color: #ffffff;
+    position: relative;
+    background: radial-gradient(rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.5))no-repeat,
+                url('images/globe.jpg') no-repeat;
+    background-size: cover;
+    background-color: #464646;
+    background-position: center;
+    background-attachment: fixed;
+    box-sizing: border-box;
+    margin: 0;
+    border-bottom: 0.02em solid #ffffff;
+  }
+
+  .countries .country svg {
+      position: absolute;
+      right: 0.5em;
+      bottom: 2em;
+      font-size: 1.5em;
+      cursor: pointer;
+      height: 10vh;
+  }
+

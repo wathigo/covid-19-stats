@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as ActionCreators from '../actions';
 import Global from './Global';
-import Country from './Country';
+import Countries from './Countries';
 
 
 function Home(props) {
@@ -14,6 +14,7 @@ function Home(props) {
         return (
             <div>
                 <Global globalData={props.dataSummary.Global}/>
+                <Countries countriesData={props.dataSummary.Countries}/>
             </div>
         )
     }
