@@ -2,7 +2,7 @@
 .global {
     text-align: left;
     position: relative;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.5))no-repeat,
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.7))no-repeat,
                 url('images/globe.jpg') no-repeat;
     color: #ffffff;
     background-size: cover;
@@ -46,11 +46,11 @@
     padding: 0.7em;
     color: #ffffff;
     position: relative;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.6))no-repeat,
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.7))no-repeat,
                 url('images/globe.jpg') no-repeat;
     background-size: cover;
     background-color: #464646;
-    background-position: center;
+    background-position: top;
     background-attachment: fixed;
     box-sizing: border-box;
     margin: 0;
