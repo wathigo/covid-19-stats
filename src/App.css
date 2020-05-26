@@ -2,13 +2,15 @@
 .global {
     text-align: left;
     position: relative;
-    background: radial-gradient(rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.3))no-repeat,
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0.5))no-repeat,
                 url('images/globe.jpg') no-repeat;
     color: #ffffff;
     background-size: cover;
     background-color: #464646;
     background-position: center;
     background-attachment: fixed;
+    padding: 0.8em;
+    border-bottom: 0.02em solid #ffffff;
   } 
 
   .global h1 {
@@ -27,7 +29,7 @@
       position: absolute;
       right: 2em;
       font-size: 1.5em;
-      bottom: 0.5em;
+      bottom: 2em;
   }
 
   /* Country styles */
@@ -44,7 +46,7 @@
     padding: 0.7em;
     color: #ffffff;
     position: relative;
-    background: radial-gradient(rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.5))no-repeat,
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.6))no-repeat,
                 url('images/globe.jpg') no-repeat;
     background-size: cover;
     background-color: #464646;
