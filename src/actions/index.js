@@ -11,13 +11,12 @@
             dispatch(loading())
         })
         .catch((err) => console.log(err));
-    }
+    } 
 });
 
  export const updateData = (data) => ({
     type: GET_ALL_DATA,
     state: data,
-    isLoading: false
 });
 
 export const loading = () => ({
