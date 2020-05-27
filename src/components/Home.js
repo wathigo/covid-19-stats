@@ -28,6 +28,7 @@ function Home(props) {
       const resetSelector = (e) => {
         e.preventDefault()
         props.changeFilter('All');
+        document.querySelector('#country-selector-filter').value = 'All';
         props.loading();
       }
 

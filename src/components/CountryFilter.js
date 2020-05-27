@@ -11,7 +11,7 @@ const CountryFilter = (props) => {
     const options = countries.map(country => <option key={country}>{country}</option>);
     return (
       <div className="country-filter">
-        <h3 className="new-book">Filter countries</h3>
+        <h3 className="filter-country">Filter countries</h3>
         <select id="country-selector-filter" onChange={props.handleFilterChange}>
           {options}
         </select>

@@ -1,4 +1,8 @@
-
+.App {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.7))no-repeat,
+                url('images/globe.jpg') no-repeat;
+    color: #ffffff;
+}
 .global {
     text-align: left;
     position: relative;
@@ -15,9 +19,14 @@
 
   .global h1 {
       margin: 0 0 0.5em 0 ;
+      text-transform: uppercase;
   }
   .global p {
       margin: 0;
+  }
+
+  h2 {
+      text-transform: uppercase;
   }
 
   .global .global-container, .global h1 {
@@ -66,3 +75,43 @@
       height: 10vh;
   }
 
+/* filters styles */
+
+.country-filter {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.country-filter .filter-country {
+    margin: 0;
+}
+
+.filtered-country {
+    position: relative;
+}
+
+.filtered-country svg {
+    position: absolute;
+    top: 0;
+    font-size: 1.8em;
+    left: 1.2em;
+}
+
+.filtered-country .country-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.filtered-country .country-container p {
+    font-size: 1.5em;
+    border-bottom: 0.02em solid #ffffff;
+    padding: 0.5em;
+}
+
+.filtered-country .country-container p:last-of-type {
+    text-align: right;
+    font-size: 0.8em;
+    border-bottom: none;
+}
