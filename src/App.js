@@ -1,4 +1,5 @@
-import React, { useEffect, Suspense, Fragment } from 'react';
+import React, { useEffect } from 'react';
+import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux';
 import './App.css';
 
@@ -11,13 +12,9 @@ function App(props) {
   }, []);
 
   return (
-    <Fragment>
-      <Suspense fallback={<div>Loading...</div>}>
-        <div className="App">      
-          <Home/>
-        </div>
-      </Suspense>
-    </Fragment>
+      <div className="App">
+        <Home/>
+      </div>
   );
 }
 

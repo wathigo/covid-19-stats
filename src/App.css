@@ -18,7 +18,7 @@
   } 
 
   .global h1 {
-      margin: 0 0 0.5em 0 ;
+      margin: 0.5em 0 0.5em 0 ;
       text-transform: uppercase;
   }
   .global p {
@@ -31,7 +31,7 @@
 
   .global .global-container, .global h1 {
       width: 90%;
-      margin: 0 auto;
+      margin: 0.5em auto 0 auto;
   }
 
   .global svg {
@@ -90,13 +90,16 @@
 
 .filtered-country {
     position: relative;
+    height: 100vh;
+    overflow-y: hidden;
 }
 
 .filtered-country svg {
     position: absolute;
-    top: -0.8em;
+    top: 0;
     font-size: 1.8em;
     left: 1.2em;
+    z-index: 10;
 }
 
 .filtered-country .country-container {

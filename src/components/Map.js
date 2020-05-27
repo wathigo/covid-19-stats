@@ -15,7 +15,6 @@ function Global(props) {
         if (props.dataSummary) {
             let i = 0;
             const countries = props.dataSummary.Countries;
-            console.log(countries)
             while (i < countries.length){
                 if (countries[i].Country === name) {
                     setCountry(countries[i])
@@ -58,9 +57,14 @@ function Global(props) {
                 polygonSideColor={() => 'rgba(0, 100, 0, 0.15)'}
                 polygonLabel={({ properties: d }) => `
                   <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
-                  ${getCountryStats(d.ADMIN)}
-                  New Deaths: ${ country.NewDeaths }<i>M</i>
-                  Total Confirmed Cases: ${ country.TotalConfirmed }<i>M</i>
+                  ${getCountryStats(d.ADMIN) === 'undefined' ? " " : " "}
+                  New Deaths: ${ country.NewDeaths }<br>
+                  Total Confirmed Cases: ${ country.TotalConfirmed }<br>
+                  New Confirmed Cases: ${ country.NewConfirmed }<br>
+                  New Recovered Cases: ${ country.NewRecovered }<br>
+                  Total Deaths Cases: ${ country.TotalDeaths }<br>
+                  Total Recovered Cases: ${ country.TotalRecovered }<br>
+                  <i>${ country.Date }</i>
                 `}
                 polygonsTransitionDuration={transitionDuration}           
                 
