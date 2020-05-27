@@ -94,7 +94,7 @@
 
 .filtered-country svg {
     position: absolute;
-    top: 0;
+    top: -0.8em;
     font-size: 1.8em;
     left: 1.2em;
 }
