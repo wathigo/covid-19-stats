@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as ActionCreators from '../actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 function Global(props) {
     return (
         <div className='global'>
+            <FontAwesomeIcon onClick={(event) => {props.back(event)}} icon={faArrowAltCircleLeft} />
             <h2>  {props.country.Country} Covid-19 Official Data Analytics </h2>
 
                 <div className='global-container'>                                                                     

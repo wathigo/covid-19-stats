@@ -12,7 +12,7 @@ const CountryFilter = (props) => {
     return (
       <div className="country-filter">
         <h3 className="new-book">Filter countries</h3>
-        <select id="categorySelectors-filter" onChange={props.handleFilterChange}>
+        <select id="country-selector-filter" onChange={props.handleFilterChange}>
           {options}
         </select>
       </div>

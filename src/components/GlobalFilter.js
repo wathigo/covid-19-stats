@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as ActionCreators from '../actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowAltCircleLeft} from '@fortawesome/free-solid-svg-icons'
 
 
 function GlobalFilter(props) {
     return (
         <div className='global'>
+            <FontAwesomeIcon onClick={(event) => {props.back(event)}} icon={faArrowAltCircleLeft} />
             <h1> Global Covid-19 Official Data Analytics </h1>
 
                 <div className='global-container'>                                                                     

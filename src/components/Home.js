@@ -18,6 +18,19 @@ function Home(props) {
         props.loading();
       }
 
+      const handleClick = (event, country_name) => {
+        event.preventDefault();
+        props.changeFilter(country_name);
+        document.querySelector('#country-selector-filter').value = country_name;
+        props.loading();
+      }
+
+      const resetSelector = (e) => {
+        e.preventDefault()
+        props.changeFilter('All');
+        props.loading();
+      }
+
       const getCountry = ((countries, country) => {
           let i = 0;
           while (i < countries.length) {
@@ -36,22 +49,22 @@ function Home(props) {
         return (
             <div>
                 <CountryFilter countries={props.dataSummary.Countries} handleFilterChange={handleFilterChange}/>            
-                <GlobalFilter globalData={props.dataSummary.Global} date={props.dataSummary.Date}/>
+                <GlobalFilter globalData={props.dataSummary.Global} date={props.dataSummary.Date} back={resetSelector}/>
             </div>
         )
     } else if (props.filter !== 'All') {
         return (
             <div>
                 <CountryFilter countries={props.dataSummary.Countries} handleFilterChange={handleFilterChange}/>
-                <FilteredCountry country={getCountry(props.dataSummary.Countries, props.filter)}/>
+                <FilteredCountry country={getCountry(props.dataSummary.Countries, props.filter)} back={resetSelector}/>
             </div>
         )
     } else {
         return (
             <div>
                 <CountryFilter countries={props.dataSummary.Countries} handleFilterChange={handleFilterChange}/>
-                <Global globalData={props.dataSummary.Global}/>
-                <Countries countriesData={props.dataSummary.Countries}/>
+                <Global globalData={props.dataSummary.Global} handleClick={handleClick} />
+                <Countries countriesData={props.dataSummary.Countries} handleClick={handleClick} back={resetSelector}/>
             </div>
         )
     }

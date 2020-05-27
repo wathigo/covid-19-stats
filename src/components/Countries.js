@@ -10,8 +10,8 @@ function Countries(props) {
         <div className='country'>
             <h2>{ country.Country}</h2>
             <p><b>Total Confirmed:</b> {country.TotalConfirmed}</p>
-            <p><b>Total Deaths</b> {country .TotalDeaths}</p>
-            <FontAwesomeIcon icon={faArrowCircleRight} />
+            <p><b>Total Deaths</b> {country.TotalDeaths}</p>
+            <FontAwesomeIcon onClick={(event) => {props.handleClick(event, country.Country)}} icon={faArrowCircleRight} />
         </div>
     )
     return (
