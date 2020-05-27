@@ -55,7 +55,7 @@ function Global(props) {
                 polygonAltitude={altitude}
                 polygonCapColor={() => 'rgba(200, 0, 0, 0.6)'}
                 polygonSideColor={() => 'rgba(0, 100, 0, 0.15)'}
-                polygonLabel={({ properties: d }) => `
+                labelsData={({ properties: d }) => `
                   <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
                   ${getCountryStats(d.ADMIN) === 'undefined' ? " " : " "}
                   New Deaths: ${ country.NewDeaths }<br>

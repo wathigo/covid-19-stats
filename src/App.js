@@ -9,7 +9,7 @@ import * as ActionCreators from './actions';
 function App(props) {
   useEffect(() => { 
     props.fetchData();
-  }, []);
+  }, [props]);
 
   return (
       <div className="App">
