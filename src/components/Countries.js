@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import * as ActionCreators from '../actions';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'; 
 
 
 function Countries(props) {

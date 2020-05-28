@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const CHANGE_FILTER = 'CHANGE_FILTER';
 const GET_ALL_DATA = 'GET_ALL_DATA';
 
