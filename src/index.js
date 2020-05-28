@@ -19,12 +19,11 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-    <Router>
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route exact path="/map" component={Map} />
-      </Switch>
-    </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={App} />
+        </Switch>
+      </Router>
     </Router>
   </Provider>,
   document.getElementById('root')
