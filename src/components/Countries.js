@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 
 function Countries(props) {
-  const {countriesData, handleClick} = props;
-  const countries = countriesData.map((country) => (
+  const { countriesData, handleClick } = props;
+  const countries = countriesData.map(country => (
     <div className="country">
       <h2>{ country.Country}</h2>
       <p>
@@ -19,7 +19,7 @@ function Countries(props) {
         {' '}
         {country.TotalDeaths}
       </p>
-      <FontAwesomeIcon onClick={(event) => { handleClick(event, country.Country); }} icon={faArrowCircleRight} />
+      <FontAwesomeIcon onClick={event => { handleClick(event, country.Country); }} icon={faArrowCircleRight} />
     </div>
   ));
   return (
