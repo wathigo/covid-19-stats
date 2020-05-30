@@ -6,6 +6,7 @@ import * as ActionCreators from '../actions';
 
 
 function Global(props) {
+  const { globalData, handleClick } = props;
   return (
     <div className="global">
       <h1> Global Covid-19 Official Data Analytics </h1>
@@ -27,5 +28,10 @@ function Global(props) {
     </div>
   );
 }
+
+Global.propTypes = {
+  globalData: PropTypes.object.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
 
 export default Global;

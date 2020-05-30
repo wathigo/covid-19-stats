@@ -1,10 +1,14 @@
 import { connect } from 'react-redux';
 import Globe from 'react-globe.gl';
 import React, { useState, useEffect, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 import * as ActionCreators from '../actions';
 
 
 function Global(props) {
+  const { dataSummary, back } = props;
   const globeEl = useRef();
   const [countries, setCountries] = useState({ features: [] });
   const [altitude, setAltitude] = useState(0.1);
@@ -12,9 +16,9 @@ function Global(props) {
   const [transitionDuration, setTransitionDuration] = useState(1000);
 
   const getCountryStats = (name) => {
-    if (props.dataSummary) {
+    if (dataSummary) {
       let i = 0;
-      const countries = props.dataSummary.Countries;
+      const countries = dataSummary.Countries;
       while (i < countries.length) {
         if (countries[i].Country === name) {
           setCountry(countries[i]);
@@ -47,6 +51,7 @@ function Global(props) {
 
   return (
     <div>
+      <FontAwesomeIcon onClick={(event) => { back(event, false); }} icon={faArrowAltCircleLeft} />
       <Globe
         ref={globeEl}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
@@ -55,7 +60,7 @@ function Global(props) {
         polygonAltitude={altitude}
         polygonCapColor={() => 'rgba(200, 0, 0, 0.6)'}
         polygonSideColor={() => 'rgba(0, 100, 0, 0.15)'}
-        labelsData={({ properties: d }) => `
+        polygonLabel={({ properties: d }) => `
                   <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
                   ${getCountryStats(d.ADMIN) === 'undefined' ? ' ' : ' '}
                   New Deaths: ${country.NewDeaths}<br>
@@ -71,6 +76,11 @@ function Global(props) {
     </div>
   );
 }
+
+Global.propTypes = {
+  dataSummary: PropTypes.object.isRequired,
+  back: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = ((state) => state);
 

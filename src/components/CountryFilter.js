@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 
 
 const CountryFilter = (props) => {
-  const countries = ['All', 'Global'];
-  props.countries.map((country) => {
-    countries.push(country.Country);
+  const { countries, handleFilterChange } = props;
+  const allCountries = ['All', 'Global'];
+  countries.map((country) => {
+    allCountries.push(country.Country);
   });
-  const options = countries.map((country) => <option key={country}>{country}</option>);
+  const options = allCountries.map((country) => <option key={country}>{country}</option>);
   return (
     <div className="country-filter">
       <h3 className="filter-country">Filter countries</h3>
-      <select id="country-selector-filter" onChange={props.handleFilterChange}>
+      <select id="country-selector-filter" onChange={handleFilterChange}>
         {options}
       </select>
     </div>
@@ -19,6 +20,11 @@ const CountryFilter = (props) => {
 };
 
 CountryFilter.propTypes = {
+  handleFilterChange: PropTypes.func.isRequired,
+};
+
+CountryFilter.propTypes = {
+  countries: PropTypes.array.isRequired,
   handleFilterChange: PropTypes.func.isRequired,
 };
 

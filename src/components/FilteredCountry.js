@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
-import * as ActionCreators from '../actions';
 
 
-function Global(props) {
+function FilteredCountry(props) {
+  const { country, back } = props;
   return (
     <div className="global filtered-country">
-      <FontAwesomeIcon onClick={(event) => { props.back(event); }} icon={faArrowAltCircleLeft} />
+      <FontAwesomeIcon onClick={(event) => { back(event); }} icon={faArrowAltCircleLeft} />
       <h2>
         {' '}
-        {props.country.Country}
+        {country.Country}
         {' '}
         Covid-19 Official Data Analytics
         {' '}
@@ -21,36 +21,36 @@ function Global(props) {
         <p>
           <b>New Confirmed:</b>
           {' '}
-          {props.country.NewConfirmed}
+          {country.NewConfirmed}
         </p>
         <p>
-          <b>Total Confirmed</b>
+          <b>Total Confirmed:</b>
           {' '}
-          {props.country.TotalConfirmed}
+          {country.TotalConfirmed}
         </p>
         <p>
-          <b>New Deaths</b>
+          <b>New Deaths:</b>
           {' '}
-          {props.country.NewDeaths}
+          {country.NewDeaths}
         </p>
         <p>
-          <b>New Recovered</b>
+          <b>New Recovered:</b>
           {' '}
-          {props.country.NewRecovered}
+          {country.NewRecovered}
         </p>
         <p>
-          <b>Total Deaths</b>
+          <b>Total Deaths:</b>
           {' '}
-          {props.country.TotalDeaths}
+          {country.TotalDeaths}
         </p>
         <p>
-          <b>Total Recovered</b>
+          <b>Total Recovered:</b>
           {' '}
-          {props.country.TotalRecovered}
+          {country.TotalRecovered}
         </p>
         <p>
           Date:
-          {props.country.Date}
+          {country.Date}
         </p>
       </div>
 
@@ -59,4 +59,9 @@ function Global(props) {
   );
 }
 
-export default Global;
+FilteredCountry.propTypes = {
+  country: PropTypes.object.isRequired,
+  back: PropTypes.func.isRequired,
+};
+
+export default FilteredCountry;

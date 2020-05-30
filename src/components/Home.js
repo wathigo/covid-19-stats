@@ -8,27 +8,38 @@ import Countries from './Countries';
 import CountryFilter from './CountryFilter';
 import GlobalFilter from './GlobalFilter';
 import FilteredCountry from './FilteredCountry';
+import Map from './Map';
 
 
 function Home(props) {
+  const {
+    changeFilter, displayMap, loading, filter, isLoading, dataSummary, mapDisplay,
+  } = props;
   const handleFilterChange = (event) => {
     event.preventDefault();
-    props.changeFilter(event.target.value);
-    props.loading();
+    changeFilter(event.target.value);
+    loading();
+  };
+
+  const showMap = (event, value) => {
+    event.preventDefault();
+    displayMap(value);
+    console.log('Actions done!');
+    loading();
   };
 
   const handleClick = (event, country_name) => {
     event.preventDefault();
-    props.changeFilter(country_name);
+    changeFilter(country_name);
     document.querySelector('#country-selector-filter').value = country_name;
-    props.loading();
+    loading();
   };
 
   const resetSelector = (e) => {
     e.preventDefault();
-    props.changeFilter('All');
+    changeFilter('All');
     document.querySelector('#country-selector-filter').value = 'All';
-    props.loading();
+    loading();
   };
 
   const getCountry = ((countries, country) => {
@@ -41,30 +52,33 @@ function Home(props) {
     }
   });
 
-  console.log(props.filter);
-
-  if (props.isLoading) {
+  if (isLoading) {
     return (<div>Loading...</div>);
-  } if (props.filter === 'Global') {
+  } if (mapDisplay) {
+    return (
+      <Map back={showMap} />
+    );
+  } if (filter === 'Global') {
     return (
       <div>
-        <CountryFilter countries={props.dataSummary.Countries} handleFilterChange={handleFilterChange} />
-        <GlobalFilter globalData={props.dataSummary.Global} date={props.dataSummary.Date} back={resetSelector} />
+        <CountryFilter countries={dataSummary.Countries} handleFilterChange={handleFilterChange} />
+        <GlobalFilter globalData={dataSummary.Global} date={dataSummary.Date} back={resetSelector} />
       </div>
     );
-  } if (props.filter !== 'All') {
+  } if (filter !== 'All') {
     return (
       <div>
-        <CountryFilter countries={props.dataSummary.Countries} handleFilterChange={handleFilterChange} />
-        <FilteredCountry country={getCountry(props.dataSummary.Countries, props.filter)} back={resetSelector} />
+        <CountryFilter countries={dataSummary.Countries} handleFilterChange={handleFilterChange} />
+        <FilteredCountry country={getCountry(dataSummary.Countries, filter)} back={resetSelector} />
       </div>
     );
   }
   return (
     <div>
-      <CountryFilter countries={props.dataSummary.Countries} handleFilterChange={handleFilterChange} />
-      <Global globalData={props.dataSummary.Global} handleClick={handleClick} />
-      <Countries countriesData={props.dataSummary.Countries} handleClick={handleClick} back={resetSelector} />
+      <button onClick={(event) => showMap(event, true)} globe>View Globe</button>
+      <CountryFilter countries={dataSummary.Countries} handleFilterChange={handleFilterChange} />
+      <Global globalData={dataSummary.Global} handleClick={handleClick} />
+      <Countries countriesData={dataSummary.Countries} handleClick={handleClick} back={resetSelector} />
     </div>
   );
 }
@@ -79,7 +93,20 @@ const mapDispatchToProps = function (dispatch) {
     loading: () => {
       dispatch(ActionCreators.loading);
     },
+    displayMap: () => {
+      dispatch(ActionCreators.displayMap);
+    },
   };
+};
+
+Home.propTypes = {
+  dataSummary: PropTypes.object,
+  changeFilter: PropTypes.func.isRequired,
+  displayMap: PropTypes.func.isRequired,
+  loading: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  mapDisplay: PropTypes.bool.isRequired,
 };
 
 

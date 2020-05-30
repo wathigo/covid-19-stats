@@ -31,7 +31,7 @@ export const changeFilter = filter => ({
     filter,
 });
 
-export const displayMap = () => ({
+export const displayMap = (value) => ({
     type: 'DISPLAY_MAP',
-    showMap: true,
+    showMap: value,
 })

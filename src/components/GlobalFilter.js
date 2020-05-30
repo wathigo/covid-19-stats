@@ -6,6 +6,7 @@ import * as ActionCreators from '../actions';
 
 
 function GlobalFilter(props) {
+  const { globalData, date } = props;
   return (
     <div className="global filtered-country">
       <FontAwesomeIcon onClick={(event) => { props.back(event); }} icon={faArrowAltCircleLeft} />
@@ -52,5 +53,10 @@ function GlobalFilter(props) {
     </div>
   );
 }
+
+GlobalFilter.propTypes = {
+  globalData: PropTypes.object.isRequired,
+  date: PropTypes.func.isRequired,
+};
 
 export default GlobalFilter;

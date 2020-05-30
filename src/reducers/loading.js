@@ -3,7 +3,7 @@ const loadingReducer = (state = null, action) => {
     case 'LOADING':
       return action.isLoading;
     default:
-      return true;
+      return state || true;
   }
 };
 
