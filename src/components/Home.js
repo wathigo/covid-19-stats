@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -24,14 +24,13 @@ function Home(props) {
   const showMap = (event, value) => {
     event.preventDefault();
     displayMap(value);
-    console.log('Actions done!');
     loading();
   };
 
-  const handleClick = (event, country_name) => {
+  const handleClick = (event, countryName) => {
     event.preventDefault();
-    changeFilter(country_name);
-    document.querySelector('#country-selector-filter').value = country_name;
+    changeFilter(countryName);
+    document.querySelector('#country-selector-filter').value = countryName;
     loading();
   };
 
@@ -42,6 +41,7 @@ function Home(props) {
     loading();
   };
 
+  /* eslint-disable consistent-return */
   const getCountry = ((countries, country) => {
     let i = 0;
     while (i < countries.length) {
@@ -59,6 +59,7 @@ function Home(props) {
       <Map back={showMap} />
     );
   } if (filter === 'Global') {
+    /* eslint-disable max-len */
     return (
       <div>
         <CountryFilter countries={dataSummary.Countries} handleFilterChange={handleFilterChange} />
@@ -75,7 +76,7 @@ function Home(props) {
   }
   return (
     <div>
-      <button onClick={event => showMap(event, true)} globe>View Globe</button>
+      <button type="submit" onClick={event => showMap(event, true)} globe>View Globe</button>
       <CountryFilter countries={dataSummary.Countries} handleFilterChange={handleFilterChange} />
       <Global globalData={dataSummary.Global} handleClick={handleClick} />
       <Countries countriesData={dataSummary.Countries} handleClick={handleClick} back={resetSelector} />
@@ -84,7 +85,7 @@ function Home(props) {
 }
 
 const mapStateToProps = (state => state);
-
+/* eslint-disable no-unused-vars */
 const mapDispatchToProps = function (dispatch) {
   return {
     filterBooks: filter => {
@@ -99,6 +100,7 @@ const mapDispatchToProps = function (dispatch) {
   };
 };
 
+/* eslint-disable react/forbid-prop-types */
 Home.propTypes = {
   dataSummary: PropTypes.object,
   changeFilter: PropTypes.func.isRequired,

@@ -58,7 +58,7 @@ function FilteredCountry(props) {
     </div>
   );
 }
-
+/* eslint-disable react/forbid-prop-types */
 FilteredCountry.propTypes = {
   country: PropTypes.object.isRequired,
   back: PropTypes.func.isRequired,

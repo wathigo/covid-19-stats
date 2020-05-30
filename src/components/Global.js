@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
-import * as ActionCreators from '../actions';
 
 
 function Global(props) {
@@ -15,20 +14,20 @@ function Global(props) {
         <p>
           <b>Total Confirmed:</b>
           {' '}
-          {props.globalData.TotalConfirmed}
+          {globalData.TotalConfirmed}
         </p>
         <p>
           <b>Total Deaths</b>
           {' '}
-          {props.globalData.TotalDeaths}
+          {globalData.TotalDeaths}
         </p>
       </div>
-      <FontAwesomeIcon icon={faArrowCircleRight} onClick={event => { props.handleClick(event, 'Global'); }} />
+      <FontAwesomeIcon icon={faArrowCircleRight} onClick={event => { handleClick(event, 'Global'); }} />
 
     </div>
   );
 }
-
+/* eslint-disable react/forbid-prop-types */
 Global.propTypes = {
   globalData: PropTypes.object.isRequired,
   handleClick: PropTypes.func.isRequired,

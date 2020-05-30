@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 function Countries(props) {
   const {countriesData, handleClick} = props;
-  const countries = countriesData.map((country, country.Country) => (
+  const countries = countriesData.map((country) => (
     <div className="country">
       <h2>{ country.Country}</h2>
       <p>

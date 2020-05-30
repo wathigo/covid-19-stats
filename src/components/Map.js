@@ -38,6 +38,7 @@ function Global(props) {
           setAltitude(() => feat => Math.max(0.1, Math.sqrt(+feat.properties.POP_EST) * 7e-5));
         }, 3000);
       })
+      /* eslint-disable no-console */
       .catch(err => console.log(err));
   }, []);
 
@@ -76,7 +77,7 @@ function Global(props) {
     </div>
   );
 }
-
+/* eslint-disable react/forbid-prop-types */
 Global.propTypes = {
   dataSummary: PropTypes.object.isRequired,
   back: PropTypes.func.isRequired,
