@@ -28,7 +28,7 @@ function Countries(props) {
     </div>
   );
 }
-
+/* eslint-disable react/forbid-prop-types  */
 Countries.propTypes = {
   countriesData: PropTypes.array.isRequired,
   handleClick: PropTypes.func.isRequired,

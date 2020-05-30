@@ -86,7 +86,7 @@ function Home(props) {
 
 const mapStateToProps = (state => state);
 /* eslint-disable no-unused-vars */
-const mapDispatchToProps = function (dispatch) {
+const mapDispatchToProps = dispatch => {
   return {
     filterBooks: filter => {
       dispatch(ActionCreators.changeFilter(filter));
@@ -100,7 +100,8 @@ const mapDispatchToProps = function (dispatch) {
   };
 };
 
-/* eslint-disable react/forbid-prop-types */
+/* eslint-disable react/forbid-prop-types  */
+/* eslint-disable react/require-default-props  */
 Home.propTypes = {
   dataSummary: PropTypes.object,
   changeFilter: PropTypes.func.isRequired,
