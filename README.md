@@ -58,7 +58,7 @@ No tests for this project
 
 👤 **Simon Wathigo**
 
-- Linkedin: [Martin Cervantes](https://www.linkedin.com/in/simon-wathigo/)
+- Linkedin: [Simon Wathigo](https://www.linkedin.com/in/simon-wathigo/)
 - Github: [@wathigo](https://github.com/wathigo)
 
 ## 🤝 Contributing
