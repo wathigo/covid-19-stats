@@ -52,7 +52,7 @@ function Global(props) {
 
   return (
     <div>
-      <FontAwesomeIcon onClick={event => { back(event, false); }} icon={faArrowAltCircleLeft} />
+      <FontAwesomeIcon className="back-from-map" onClick={event => { back(event, false); }} icon={faArrowAltCircleLeft} />
       <Globe
         ref={globeEl}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
