@@ -8,7 +8,7 @@ function FilteredCountry(props) {
   const { country, back } = props;
   return (
     <div className="global filtered-country">
-      <FontAwesomeIcon onClick={(event) => { back(event); }} icon={faArrowAltCircleLeft} />
+      <FontAwesomeIcon onClick={event => { back(event); }} icon={faArrowAltCircleLeft} />
       <h2>
         {' '}
         {country.Country}

@@ -18,7 +18,7 @@ function App(props) {
   );
 }
 
-const mapStateToProps = ((state) => state);
+const mapStateToProps = (state => state);
 
 App.propTypes = {
   fetchData: PropTypes.func.isRequired,

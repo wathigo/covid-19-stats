@@ -23,7 +23,7 @@ function Global(props) {
           {props.globalData.TotalDeaths}
         </p>
       </div>
-      <FontAwesomeIcon icon={faArrowCircleRight} onClick={(event) => { props.handleClick(event, 'Global'); }} />
+      <FontAwesomeIcon icon={faArrowCircleRight} onClick={event => { props.handleClick(event, 'Global'); }} />
 
     </div>
   );

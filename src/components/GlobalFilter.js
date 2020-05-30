@@ -9,7 +9,7 @@ function GlobalFilter(props) {
   const { globalData, date } = props;
   return (
     <div className="global filtered-country">
-      <FontAwesomeIcon onClick={(event) => { props.back(event); }} icon={faArrowAltCircleLeft} />
+      <FontAwesomeIcon onClick={event => { props.back(event); }} icon={faArrowAltCircleLeft} />
       <h1> Global Covid-19 Official Data Analytics </h1>
 
       <div className="country-container">

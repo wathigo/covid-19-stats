@@ -15,7 +15,7 @@ function Global(props) {
   const [country, setCountry] = useState(0);
   const [transitionDuration, setTransitionDuration] = useState(1000);
 
-  const getCountryStats = (name) => {
+  const getCountryStats = name => {
     if (dataSummary) {
       let i = 0;
       const countries = dataSummary.Countries;
@@ -30,15 +30,15 @@ function Global(props) {
 
   useEffect(() => {
     fetch('https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
-      .then((res) => res.json())
-      .then((countries) => {
+      .then(res => res.json())
+      .then(countries => {
         setCountries(countries);
         setTimeout(() => {
           setTransitionDuration(4000);
-          setAltitude(() => (feat) => Math.max(0.1, Math.sqrt(+feat.properties.POP_EST) * 7e-5));
+          setAltitude(() => feat => Math.max(0.1, Math.sqrt(+feat.properties.POP_EST) * 7e-5));
         }, 3000);
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   }, []);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ function Global(props) {
 
   return (
     <div>
-      <FontAwesomeIcon onClick={(event) => { back(event, false); }} icon={faArrowAltCircleLeft} />
+      <FontAwesomeIcon onClick={event => { back(event, false); }} icon={faArrowAltCircleLeft} />
       <Globe
         ref={globeEl}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
@@ -82,6 +82,6 @@ Global.propTypes = {
   back: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ((state) => state);
+const mapStateToProps = (state => state);
 
 export default connect(mapStateToProps, ActionCreators)(Global);

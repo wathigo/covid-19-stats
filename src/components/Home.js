@@ -15,7 +15,7 @@ function Home(props) {
   const {
     changeFilter, displayMap, loading, filter, isLoading, dataSummary, mapDisplay,
   } = props;
-  const handleFilterChange = (event) => {
+  const handleFilterChange = event => {
     event.preventDefault();
     changeFilter(event.target.value);
     loading();
@@ -35,7 +35,7 @@ function Home(props) {
     loading();
   };
 
-  const resetSelector = (e) => {
+  const resetSelector = e => {
     e.preventDefault();
     changeFilter('All');
     document.querySelector('#country-selector-filter').value = 'All';
@@ -75,7 +75,7 @@ function Home(props) {
   }
   return (
     <div>
-      <button onClick={(event) => showMap(event, true)} globe>View Globe</button>
+      <button onClick={event => showMap(event, true)} globe>View Globe</button>
       <CountryFilter countries={dataSummary.Countries} handleFilterChange={handleFilterChange} />
       <Global globalData={dataSummary.Global} handleClick={handleClick} />
       <Countries countriesData={dataSummary.Countries} handleClick={handleClick} back={resetSelector} />
@@ -83,11 +83,11 @@ function Home(props) {
   );
 }
 
-const mapStateToProps = ((state) => state);
+const mapStateToProps = (state => state);
 
 const mapDispatchToProps = function (dispatch) {
   return {
-    filterBooks: (filter) => {
+    filterBooks: filter => {
       dispatch(ActionCreators.changeFilter(filter));
     },
     loading: () => {
