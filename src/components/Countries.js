@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 
 function Countries(props) {
   const { countriesData, handleClick } = props;
+  /* eslint-disable max-len */
+  /* eslint-disable react/jsx-key */
   const countries = countriesData.map(country => (
     <div className="country">
       <h2>{ country.Country}</h2>

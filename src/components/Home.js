@@ -86,6 +86,7 @@ function Home(props) {
 
 const mapStateToProps = (state => state);
 /* eslint-disable no-unused-vars */
+/* eslint-disable arrow-body-style */
 const mapDispatchToProps = dispatch => {
   return {
     filterBooks: filter => {
