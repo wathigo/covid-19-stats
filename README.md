@@ -1,6 +1,6 @@
 # Covid-19 Stats
 
-On January 2020, a virus outbreak emerged infecting people all over the world. Having an awareness about the virus spread can play a big role in ensuring your safety. For example, it can help you decide wheather it is safe to visit a specific country/area or not. Covid-19 stats come in to solve this problem. It fetches current official data from [Covid-19 official data free API](https://covid19api.com/) and allows one to view and filter data for specific countries. Onother interesting feauture is that you can be able to visualize the spread on the globe. Thanks to [react-globe-gl](https://github.com/vasturiano/react-globe.gl)
+On January 2020, a virus outbreak emerged infecting people all over the world. Having an awareness about the virus spread can play a big role in ensuring your safety. For example, it can help you decide wheather it is safe to visit a specific country/area or not. Covid-19 stats come in to solve this problem. It fetches current official data from [Covid-19 official data free API](https://covid19api.com/) and allows one to view and filter data for specific countries. Onother interesting feauture is that you can be able to visualize the spread on the globe. Thanks to [react-globe-gl](https://github.com/vasturiano/react-globe.gl).
 
 ## :package: Built With
 
