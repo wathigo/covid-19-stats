@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -8,9 +8,7 @@ import Countries from './Countries';
 import CountryFilter from './CountryFilter';
 import GlobalFilter from './GlobalFilter';
 import FilteredCountry from './FilteredCountry';
-import Map from './Map';
-
-const MapChart = lazy(() => Map);
+import MapChart from './Map';
 
 
 function Home(props) {
@@ -58,9 +56,7 @@ function Home(props) {
     return (<div>Loading...</div>);
   } if (mapDisplay) {
     return (
-      <Suspense fallback={<div>Loading...</div>}>
-        <MapChart back={showMap} />
-      </Suspense>
+      <MapChart back={showMap} />
     );
   } if (filter === 'Global') {
     /* eslint-disable max-len */
