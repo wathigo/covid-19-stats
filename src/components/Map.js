@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import Globe from 'react-globe.gl';
-import React, { useState, useEffect, useRef } from 'react';
+import React, {
+  memo, useState, useEffect, useRef,
+} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
@@ -11,9 +13,8 @@ function Global(props) {
   const { dataSummary, back } = props;
   const globeEl = useRef();
   const [countries, setCountries] = useState({ features: [] });
-  const [altitude, setAltitude] = useState(0.1);
   const [country, setCountry] = useState(0);
-  const [transitionDuration, setTransitionDuration] = useState(1000);
+  const [hoverDistance, setHoverDistance] = useState();
 
   const getCountryStats = name => {
     if (dataSummary) {
@@ -33,10 +34,6 @@ function Global(props) {
       .then(res => res.json())
       .then(countries => {
         setCountries(countries);
-        setTimeout(() => {
-          setTransitionDuration(4000);
-          setAltitude(() => feat => Math.max(0.1, Math.sqrt(+feat.properties.POP_EST) * 7e-5));
-        }, 3000);
       })
       /* eslint-disable no-console */
       .catch(err => console.log(err));
@@ -58,9 +55,12 @@ function Global(props) {
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
 
         polygonsData={countries.features}
-        polygonAltitude={altitude}
-        polygonCapColor={() => 'rgba(200, 0, 0, 0.6)'}
-        polygonSideColor={() => 'rgba(0, 100, 0, 0.15)'}
+        polygonAltitude={d => (d === hoverDistance ? 0.15 : 0.08)}
+        polygonCapColor={d => (d === hoverDistance ? 'blue' : 'black')}
+        polygonSideColor={() => 'grey'}
+        onPolygonHover={setHoverDistance}
+        polygonStrokeColor={() => '#111'}
+        onPolygonClick={polygon => global.console.log('polygon', polygon)}
         polygonLabel={({ properties: d }) => `
                   <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
                   ${getCountryStats(d.ADMIN) === 'undefined' ? ' ' : ' '}
@@ -72,7 +72,7 @@ function Global(props) {
                   Total Recovered Cases: ${country.TotalRecovered}<br>
                   <i>${country.Date}</i>
                 `}
-        polygonsTransitionDuration={transitionDuration}
+        polygonsTransitionDuration={300}
       />
     </div>
   );
@@ -85,4 +85,4 @@ Global.propTypes = {
 
 const mapStateToProps = (state => state);
 
-export default connect(mapStateToProps, ActionCreators)(Global);
+export default connect(mapStateToProps, ActionCreators)(memo(Global));
