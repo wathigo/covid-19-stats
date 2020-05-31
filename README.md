@@ -46,9 +46,11 @@ yarn start
 
 Ypu will be redirected to `localhost:3000` after starting the development server.
 After this, you will get to the home page of the applications containing unfiltered world covid-19 statists.
+<p align="center">
 <a href="#">
     <img src="./src/images/home.png" alt="home">
   </a>
+</p>
 
 ## :vertical_traffic_light: Testing
 No tests for this project
