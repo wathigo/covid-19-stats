@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Globe from 'react-globe.gl';
 import React, {
-  memo, useState, useEffect, useRef,
+  useState, useEffect, useRef,
 } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
@@ -85,4 +85,4 @@ Global.propTypes = {
 
 const mapStateToProps = (state => state);
 
-export default connect(mapStateToProps, ActionCreators)(memo(Global));
+export default connect(mapStateToProps, ActionCreators)(Global);
