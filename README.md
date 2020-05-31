@@ -46,7 +46,7 @@ yarn start
 
 ## :arrow_forward: Usage
 
-Ypu will be redirected to `localhost:3000` after starting the development server.
+You will be redirected to `localhost:3000` after starting the development server.
 After this, you will get to the home page of the applications containing unfiltered world covid-19 statists.
 <p align="center">
 <a href="#">
