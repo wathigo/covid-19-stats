@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 
-function Global(props) {
+const Global = (props) => {
   const { globalData, handleClick } = props;
   return (
     <div className="global">

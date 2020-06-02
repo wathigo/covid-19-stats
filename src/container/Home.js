@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import * as ActionCreators from '../actions';
-import Global from './Global';
-import Countries from './Countries';
-import CountryFilter from './CountryFilter';
-import GlobalFilter from './GlobalFilter';
-import FilteredCountry from './FilteredCountry';
-import MapChart from './Map';
+import Global from '../components/Global';
+import Countries from '../components/Countries';
+import CountryFilter from '../components/CountryFilter';
+import GlobalFilter from '../components/GlobalFilter';
+import FilteredCountry from '../components/FilteredCountry';
+import MapChart from '../components/Map';
 
 
-function Home(props) {
+const Home = (props) => {
   const {
     changeFilter, displayMap, loading, filter, isLoading, dataSummary, mapDisplay,
   } = props;

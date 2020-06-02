@@ -45,6 +45,9 @@ function Global(props) {
     globeEl.current.controls().autoRotateSpeed = 0.3;
 
     globeEl.current.pointOfView({ altitude: 4 }, 5000);
+    globeEl.current.controls().addEventListener('start', 
+  () => { globeEl.current.controls().autoRotate = false; }
+);
   }, []);
 
   return (
@@ -60,7 +63,7 @@ function Global(props) {
         polygonSideColor={() => 'grey'}
         onPolygonHover={setHoverDistance}
         polygonStrokeColor={() => '#111'}
-        onPolygonClick={polygon => global.console.log('polygon', polygon)}
+        onPolygonClick={({ properties: d }) => getCountryStats(d.ADMIN)}
         polygonLabel={({ properties: d }) => `
                   <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
                   ${getCountryStats(d.ADMIN) === 'undefined' ? ' ' : ' '}

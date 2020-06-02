@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 
-function GlobalFilter(props) {
+const GlobalFilter = (props) => {
   const { globalData, date, back } = props;
   return (
     <div className="global filtered-country">

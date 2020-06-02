@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 
-function FilteredCountry(props) {
+const FilteredCountry = (props) => {
   const { country, back } = props;
   return (
     <div className="global filtered-country">
