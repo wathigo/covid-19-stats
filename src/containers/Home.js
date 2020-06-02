@@ -11,7 +11,7 @@ import FilteredCountry from '../components/FilteredCountry';
 import MapChart from '../components/Map';
 
 
-const Home = (props) => {
+const Home = props => {
   const {
     changeFilter, displayMap, loading, filter, isLoading, dataSummary, mapDisplay,
   } = props;
@@ -82,7 +82,7 @@ const Home = (props) => {
       <Countries countriesData={dataSummary.Countries} handleClick={handleClick} back={resetSelector} />
     </div>
   );
-}
+};
 
 const mapStateToProps = (state => state);
 /* eslint-disable no-unused-vars */

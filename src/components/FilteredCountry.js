@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 
-const FilteredCountry = (props) => {
+const FilteredCountry = props => {
   const { country, back } = props;
   return (
     <div className="global filtered-country">
@@ -57,7 +57,7 @@ const FilteredCountry = (props) => {
 
     </div>
   );
-}
+};
 /* eslint-disable react/forbid-prop-types */
 FilteredCountry.propTypes = {
   country: PropTypes.object.isRequired,

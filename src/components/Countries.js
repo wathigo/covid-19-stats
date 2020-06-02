@@ -4,7 +4,7 @@ import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 
-const Countries = (props) => {
+const Countries = props => {
   const { countriesData, handleClick } = props;
   /* eslint-disable max-len */
   /* eslint-disable react/jsx-key */
@@ -29,7 +29,7 @@ const Countries = (props) => {
       {countries}
     </div>
   );
-}
+};
 /* eslint-disable react/forbid-prop-types  */
 Countries.propTypes = {
   countriesData: PropTypes.array.isRequired,

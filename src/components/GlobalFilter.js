@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 
-const GlobalFilter = (props) => {
+const GlobalFilter = props => {
   const { globalData, date, back } = props;
   return (
     <div className="global filtered-country">
@@ -51,7 +51,7 @@ const GlobalFilter = (props) => {
 
     </div>
   );
-}
+};
 /* eslint-disable react/forbid-prop-types */
 GlobalFilter.propTypes = {
   globalData: PropTypes.object.isRequired,

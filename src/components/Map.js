@@ -45,9 +45,8 @@ function Global(props) {
     globeEl.current.controls().autoRotateSpeed = 0.3;
 
     globeEl.current.pointOfView({ altitude: 4 }, 5000);
-    globeEl.current.controls().addEventListener('start', 
-  () => { globeEl.current.controls().autoRotate = false; }
-);
+    globeEl.current.controls().addEventListener('start',
+      () => { globeEl.current.controls().autoRotate = false; });
   }, []);
 
   return (

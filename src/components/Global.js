@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 
-const Global = (props) => {
+const Global = props => {
   const { globalData, handleClick } = props;
   return (
     <div className="global">
@@ -26,7 +26,7 @@ const Global = (props) => {
 
     </div>
   );
-}
+};
 /* eslint-disable react/forbid-prop-types */
 Global.propTypes = {
   globalData: PropTypes.object.isRequired,
