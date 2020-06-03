@@ -55,7 +55,10 @@ After this, you will get to the home page of the applications containing unfilte
 </p>
 
 ## :vertical_traffic_light: Testing
-No tests for this project
+To run the test, run:
+```sh
+npm test
+```
 
 
 ## :busts_in_silhouette: Authors
