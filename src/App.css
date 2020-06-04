@@ -1,38 +1,140 @@
 .App {
-  text-align: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.7))no-repeat,
+                url('images/globe.jpg') no-repeat;
+    color: #ffffff;
+    position: relative;
 }
+.global {
+    text-align: left;
+    position: relative;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.7))no-repeat,
+                url('images/globe.jpg') no-repeat;
+    color: #ffffff;
+    background-size: cover;
+    background-color: #464646;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0.8em;
+    border-bottom: 0.02em solid #ffffff;
+  } 
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .global h1 {
+      margin: 0.5em 0 0.5em 0 ;
+      text-transform: uppercase;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .global p {
+      margin: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  h2 {
+      text-transform: uppercase;
   }
+
+  .global .global-container, .global h1 {
+      width: 90%;
+      margin: 0.5em auto 0 auto;
+  }
+
+  .global svg {
+      position: absolute;
+      right: 2em;
+      font-size: 1.5em;
+      bottom: 2em;
+  }
+
+  /* Country styles */
+
+  .countries {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .countries .country {
+    flex: 1 0 46%;
+    width: 50%;
+    text-align: left;
+    padding: 0.7em;
+    color: #ffffff;
+    position: relative;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.7))no-repeat,
+                url('images/globe.jpg') no-repeat;
+    background-size: cover;
+    background-color: #464646;
+    background-position: top;
+    background-attachment: fixed;
+    box-sizing: border-box;
+    margin: 0;
+    border-bottom: 0.02em solid #ffffff;
+  }
+
+  .countries .country svg {
+      position: absolute;
+      right: 0.5em;
+      bottom: 2em;
+      font-size: 1.5em;
+      cursor: pointer;
+      height: 10vh;
+  }
+
+/* filters styles */
+
+.country-filter {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.country-filter .filter-country {
+    margin: 0;
+}
+
+.filtered-country {
+    position: relative;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.filtered-country svg {
+    position: absolute;
+    top: 0;
+    font-size: 1.8em;
+    left: 1.2em;
+    z-index: 10;
+}
+
+.filtered-country .country-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.filtered-country .country-container p {
+    font-size: 1.5em;
+    border-bottom: 0.02em solid #ffffff;
+    padding: 0.5em;
+}
+
+.filtered-country .country-container p:last-of-type {
+    text-align: right;
+    font-size: 0.8em;
+    border-bottom: none;
+}
+
+.App button {
+    position: fixed;
+    width: 3.6em;
+    height: 3.6em;
+    border-radius: 50%;
+    border: none;
+    bottom: 2.5vh;
+    right: 2em;
+    z-index: 1000;font-weight: bold;
+}
+
+.App .back-from-map {
+    position: absolute;
+    left: 0.5em;
+    top: 0.5em;
+    font-size: 2em;
+    z-index: 1000;
 }
