@@ -1,68 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Covid-19 Stats
 
-## Available Scripts
+On January 2020, a virus outbreak emerged infecting people all over the world. Having an awareness about the virus spread can play a big role in ensuring your safety. For example, it can help you decide wheather it is safe to visit a specific country/area or not. Covid-19 stats come in to solve this problem. It fetches current official data from [Covid-19 official data free API](https://covid19api.com/) and allows one to view and filter data for specific countries. Onother interesting feauture is that you can be able to visualize the spread on the globe. Thanks to [react-globe-gl](https://github.com/vasturiano/react-globe.gl).
 
-In the project directory, you can run:
+The live version can be found [here](https://official-covid-19-stats.netlify.app).
 
-### `yarn start`
+## :package: Built With
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    - React.js
+    - Redux
+    - react-globe.gl
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## :computer: Getting Started
 
-### `yarn test`
+    To get a local copy up and running follow these simple steps.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## :arrow_heading_down: Install
 
-### `yarn build`
+1) Clone the repository to your local machine
+```sh
+$ git clone https://github.com/wathigo/covid-19-stats.git
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2) cd into the directory
+```sh
+$ cd covid-19-stats
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+3) install dependencies 
+```sh
+npm install
+```
+or if you are using yarn:
+```sh
+yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Start the development server
+```sh
+npm start
+```
+or with yarn:
+```sh
+yarn start
+```
 
-### `yarn eject`
+## :arrow_forward: Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You will be redirected to `localhost:3000` after starting the development server.
+After this, you will get to the home page of the applications containing unfiltered world covid-19 statists.
+<p align="center">
+<a href="#">
+    <img src="./src/images/home.png" alt="home">
+  </a>
+</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## :vertical_traffic_light: Testing
+To run the test, run:
+```sh
+npm test
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## :busts_in_silhouette: Authors
 
-## Learn More
+👤 **Simon Wathigo**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Linkedin: [Simon Wathigo](https://www.linkedin.com/in/simon-wathigo/)
+- Github: [@wathigo](https://github.com/wathigo)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🤝 Contributing
 
-### Code Splitting
+    Contributions, issues and feature requests are welcome!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Feel free to check the [issues page](../../issues).
 
-### Analyzing the Bundle Size
+## :star2: Show your support
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+    Give a ⭐️ if you like this project!
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
