@@ -29,6 +29,20 @@ function Global(props) {
     }
   };
 
+  const getLabelData = (d) => {
+    getCountryStats(d.ADMIN)
+    return (
+      `
+        <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
+        Total Confirmed Cases: ${country.TotalConfirmed}<br>
+        Total Deaths Cases: ${country.TotalDeaths}<br>
+        Total Recovered Cases: ${country.TotalRecovered}<br>
+        <i>${country.Date}</i>
+        `
+    )
+    
+  }
+
   useEffect(() => {
     fetch('https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
       .then(res => res.json())
@@ -45,8 +59,6 @@ function Global(props) {
     globeEl.current.controls().autoRotateSpeed = 0.3;
 
     globeEl.current.pointOfView({ altitude: 4 }, 5000);
-    globeEl.current.controls().addEventListener('start',
-      () => { globeEl.current.controls().autoRotate = false; });
   }, []);
 
   return (
@@ -62,18 +74,18 @@ function Global(props) {
         polygonSideColor={() => 'grey'}
         onPolygonHover={setHoverDistance}
         polygonStrokeColor={() => '#111'}
-        onPolygonClick={({ properties: d }) => getCountryStats(d.ADMIN)}
-        polygonLabel={({ properties: d }) => `
-                  <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
-                  ${getCountryStats(d.ADMIN) === 'undefined' ? ' ' : ' '}
-                  New Deaths: ${country.NewDeaths}<br>
-                  Total Confirmed Cases: ${country.TotalConfirmed}<br>
-                  New Confirmed Cases: ${country.NewConfirmed}<br>
-                  New Recovered Cases: ${country.NewRecovered}<br>
-                  Total Deaths Cases: ${country.TotalDeaths}<br>
-                  Total Recovered Cases: ${country.TotalRecovered}<br>
-                  <i>${country.Date}</i>
-                `}
+        onPolygonClick={({ properties: d }) => `
+        <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
+        ${getCountryStats(d.ADMIN) === 'undefined' ? ' ' : ' '}
+        New Deaths: ${country.NewDeaths}<br>
+        Total Confirmed Cases: ${country.TotalConfirmed}<br>
+        New Confirmed Cases: ${country.NewConfirmed}<br>
+        New Recovered Cases: ${country.NewRecovered}<br>
+        Total Deaths Cases: ${country.TotalDeaths}<br>
+        Total Recovered Cases: ${country.TotalRecovered}<br>
+        <i>${country.Date}</i>
+      `}
+        polygonLabel={({ properties: d }) => getLabelData(d)}
         polygonsTransitionDuration={300}
       />
     </div>
