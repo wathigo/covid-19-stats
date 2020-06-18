@@ -7,8 +7,9 @@ import Home from './Home';
 import * as ActionCreators from '../actions';
 
 function App(props) {
+  const { fetchData } = props;
   useEffect(() => {
-    props.fetchData();
+    fetchData();
   }, []);
 
   return (
