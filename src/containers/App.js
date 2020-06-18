@@ -10,7 +10,7 @@ function App(props) {
   const { fetchData } = props;
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return (
     <div className="App">
