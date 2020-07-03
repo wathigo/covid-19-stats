@@ -29,8 +29,8 @@ function Global(props) {
     }
   };
 
-  const getLabelData = (d) => {
-    getCountryStats(d.ADMIN)
+  const getLabelData = d => {
+    getCountryStats(d.ADMIN);
     return (
       `
         <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
@@ -39,9 +39,8 @@ function Global(props) {
         Total Recovered Cases: ${country.TotalRecovered}<br>
         <i>${country.Date}</i>
         `
-    )
-    
-  }
+    );
+  };
 
   useEffect(() => {
     fetch('https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
@@ -74,17 +73,6 @@ function Global(props) {
         polygonSideColor={() => 'grey'}
         onPolygonHover={setHoverDistance}
         polygonStrokeColor={() => '#111'}
-        onPolygonClick={({ properties: d }) => `
-        <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
-        ${getCountryStats(d.ADMIN) === 'undefined' ? ' ' : ' '}
-        New Deaths: ${country.NewDeaths}<br>
-        Total Confirmed Cases: ${country.TotalConfirmed}<br>
-        New Confirmed Cases: ${country.NewConfirmed}<br>
-        New Recovered Cases: ${country.NewRecovered}<br>
-        Total Deaths Cases: ${country.TotalDeaths}<br>
-        Total Recovered Cases: ${country.TotalRecovered}<br>
-        <i>${country.Date}</i>
-      `}
         polygonLabel={({ properties: d }) => getLabelData(d)}
         polygonsTransitionDuration={300}
       />
