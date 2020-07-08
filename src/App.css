@@ -129,6 +129,8 @@
     bottom: 2.5vh;
     right: 2em;
     z-index: 1000;font-weight: bold;
+    background-color: blue;
+    color: #ffffff;
 }
 
 .App .back-from-map {
@@ -137,4 +139,10 @@
     top: 0.5em;
     font-size: 2em;
     z-index: 1000;
+}
+
+@media only screen and (max-width:450px) {
+    .countries .country p {
+        width: 70%;
+    }
 }
