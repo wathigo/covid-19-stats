@@ -7,6 +7,7 @@ The live version can be found [here](https://official-covid-19-stats.netlify.app
 ## :package: Built With
 
     - React.js
+    - react-hooks
     - Redux
     - react-globe.gl
 
